@@ -5,8 +5,8 @@ const app = express();
 const date = require(__dirname + '/date.js');
 const day = date.getDate();
 
-const items = [];
-const workItems = [];
+let items = [];
+let workItems = [];
 
 app.set('view engine', 'ejs');
 
@@ -50,6 +50,12 @@ app.get('/work', function(req, res) {
     homeMenuLink: homeActivity,
     workMenuLink: workActivity
   });
+});
+
+app.get('/clear', function(req, res) {
+  items = [];
+  workItems = [];
+  res.redirect('/');
 });
 
 app.listen(process.env.PORT || 3000, function() {

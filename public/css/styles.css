@@ -82,9 +82,9 @@ footer {
 
 
 /* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
+.add,
+.add:hover,
+.add:focus {
   min-height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -137,4 +137,12 @@ body {
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+.refresh,
+.refresh:hover,
+.refresh:focus {
+  background-color: #fff;
+  color: #A683E3;
+  text-shadow: none; /* Prevent inheritance from `body` */
 }

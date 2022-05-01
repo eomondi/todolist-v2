@@ -26,8 +26,13 @@
 
       <form class="item" action="/" method="post">
         <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus>
-        <button class="btn-secondary" type="submit" name="list" value=<%=listTitle%>>+</button>
+        <button class="add btn-secondary" type="submit" name="list" value=<%=listTitle%>>+</button>
       </form>
+
+      <p class="lead">
+        <a href="/clear" class="refresh btn btn-lg btn-secondary fw-bold border-white bg-white">Clear List</a>
+      </p>
+
     </div>
   </main>
 

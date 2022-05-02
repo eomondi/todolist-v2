@@ -146,3 +146,7 @@ body {
   color: #A683E3;
   text-shadow: none; /* Prevent inheritance from `body` */
 }
+
+.copy a:hover {
+    color: #fff !important;
+}

@@ -33,7 +33,7 @@ body {
 .add,
 .add:hover,
 .add:focus {
-  /* min-height: 50px;*/
+  border-radius: 50%;
   border-color: transparent;
   background-color: #A683E3;
   color: #fff;

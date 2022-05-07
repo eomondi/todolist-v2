@@ -52,11 +52,11 @@ app.get('/work', function(req, res) {
   });
 });
 
-app.get('/clear', function(req, res) {
-  items = [];
-  workItems = [];
-  res.redirect('/');
-});
+// app.get('/clear', function(req, res) {
+//   items = [];
+//   workItems = [];
+//   res.redirect('/');
+// });
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server is running on port 3000.");

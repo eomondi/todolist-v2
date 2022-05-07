@@ -1,39 +1,40 @@
 <%- include('header'); -%>
-
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0">To Do List</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link <%=homeMenuLink%>" aria-current="page" href="/">Home</a>
-        <a class="nav-link work <%=workMenuLink%>" href="/work">Work</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="px-3">
-    <div class="box" id="heading">
-      <h1><%=listTitle%></h1>
-    </div>
-
-    <div class="box">
-      <%for (var i = 0; i < newListItems.length; i++) {%>
-      <div class="item">
-        <input type="checkbox">
-        <p><%=newListItems[i]%></p>
+<div class="row row-cols-1 row-cols-md-1 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="box card-header py-3">
+        <h4 class="my-0 fw-normal"><%=listTitle%></h4>
       </div>
-      <%}%>
-
-      <form class="item" action="/" method="post">
-        <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus>
-        <button class="add btn-secondary" type="submit" name="list" value=<%=listTitle%>>+</button>
-      </form>
-
-      <p class="lead">
-        <a href="/clear" class="refresh btn btn-lg btn-secondary fw-bold border-white bg-white">Clear List</a>
-      </p>
-
+      <div class="card-body">
+        <div class="list-group">
+          <%for (var i = 0; i < newListItems.length; i++) {%>
+          <label class="list-group-item d-flex gap-3">
+            <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+            <span class="pt-1 form-checked-content">
+              <strong>
+                <p><%=newListItems[i]%></p>
+              </strong>
+            </span>
+          </label>
+          <%}%>
+          <form class="list-group-item d-flex gap-3 bg-light" action="/" method="post">
+            <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0" disabled type="checkbox" value="" style="font-size: 1.375em;">
+            <span class="pt-1 form-checked-content">
+              <span contenteditable="false" class="w-100"><input type="text" name="newItem" placeholder="Type new item here" autocomplete="off" style="border: none; background-color: transparent; resize: none; outline: none;" autofocus></span>
+              <small class="d-block text-muted">
+                <svg class="bi me-1" width="1em" height="1em">
+                  <use xlink:href="#list-check" />
+                </svg>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="add btn btn-outline-light btn-sm" type="submit" name="list" value=<%=listTitle%>><i class="fa-solid fa-plus" style="padding-right: 0.4rem;"></i>Add item</button>
+                </div>
+          </small>
+          </span>
+          </form>
+        </div>
+      </div>
     </div>
-  </main>
+  </div>
+</div>
 
-  <%- include('footer'); -%>
+<%- include('footer'); -%>

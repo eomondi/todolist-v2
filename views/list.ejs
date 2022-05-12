@@ -1,37 +1,36 @@
 <%- include('header'); -%>
-<div class="row row-cols-1 row-cols-md-1 mb-3 text-center">
-  <div class="col">
-    <div class="card mb-4 rounded-3 shadow-sm">
-      <div class="box card-header py-3">
-        <h4 class="my-0 fw-normal"><%=listTitle%></h4>
-      </div>
-      <div class="card-body">
-        <div class="list-group">
-          <%for (var i = 0; i < newListItems.length; i++) {%>
+
+<div class="d-flex gap-5 justify-content-center">
+  <div class="card mb-4 rounded-3 shadow-sm">
+    <div class="box card-header py-3">
+      <h4 class="my-0 fw-normal"><%=listTitle%></h4>
+    </div>
+    <div class="card-body">
+      <div class="list-group">
+        <%newListItems.forEach(function(item){%>
+        <form class="check" action="/delete" method="post">
           <label class="list-group-item d-flex gap-3">
-            <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+            <input class="form-check-input flex-shrink-0" type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%=item._id%>" style="font-size: 1.375em;">
             <span class="pt-1 form-checked-content">
-              <strong>
-                <p><%=newListItems[i]%></p>
-              </strong>
+              <p align="left"><%=item.name%></p>
             </span>
           </label>
-          <%}%>
-          <form class="list-group-item d-flex gap-3 bg-light" action="/" method="post">
-            <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0" disabled type="checkbox" value="" style="font-size: 1.375em;">
-            <span class="pt-1 form-checked-content">
-              <span contenteditable="false" class="w-100"><input type="text" name="newItem" placeholder="Type new item here" autocomplete="off" style="border: none; background-color: transparent; resize: none; outline: none;" autofocus></span>
-              <small class="d-block text-muted">
-                <svg class="bi me-1" width="1em" height="1em">
-                  <use xlink:href="#list-check" />
-                </svg>
-                <div class="d-flex justify-content-center">
-                <button class="add btn btn-outline-light btn-sm" type="submit" name="list" value=<%=listTitle%>><i class="fa-solid fa-plus"></i></button>
-                </div>
-          </small>
+          <input type="hidden" name="listName" value="<%=listTitle%>">
+        </form>
+        <%});%>
+        <form class="list-group-item d-flex gap-3 bg-light" action="/" method="post">
+          <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0" disabled type="checkbox" style="font-size: 1.375em;">
+          <span class="pt-1 form-checked-content">
+            <span contenteditable="false" class="w-100"><input class="typingarea" type="text" name="newItem" placeholder="Type new item here" autocomplete="off" autofocus><button class="add btn btn-outline-light btn-sm" type="submit" name="list"
+                value="<%=listTitle%>"><i class="fa-solid fa-plus"></i></button>
+            </span>
+            <small class="d-block text-muted">
+              <svg class="bi me-1" width="1em" height="1em">
+                <use xlink:href="#list-check" />
+              </svg>
+            </small>
           </span>
-          </form>
-        </div>
+        </form>
       </div>
     </div>
   </div>

@@ -2,31 +2,8 @@ body {
   background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
 }
 
-.box {
-  color: #fff;
-  background: #A683E3;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  color: #fff;
-  background-color: transparent;
-  border-bottom: solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: #fff;
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
+h1 {
   color: #A683E3;
-  border-bottom-color: #A683E3;
 }
 
 .add,
@@ -37,6 +14,7 @@ body {
   background-color: #A683E3;
   color: #fff;
   border-width: 0;
+  margin-left: 1rem;
 }
 
 .bi {
@@ -44,10 +22,30 @@ body {
   fill: currentColor;
 }
 
-.list-group {
-  width: auto;
-  max-width: 460px;
-  margin: 4rem auto;
+.box {
+  color: #fff;
+  background: #A683E3;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.check {
+  margin-bottom: -1px;
+}
+
+[contenteditable]:focus {
+  outline: 0;
+}
+
+.copy a:hover {
+  color: #fff !important;
+}
+
+.copylink {
+  text-decoration: none;
+}
+
+.downNav li a:hover {
+  color: #fff !important;
 }
 
 .form-check-input:checked+.form-checked-content {
@@ -59,8 +57,15 @@ body {
   border-style: dashed;
 }
 
-[contenteditable]:focus {
-  outline: 0;
+.intro {
+  width: 50%;
+  margin: auto;
+}
+
+.list-group {
+  width: auto;
+  max-width: 460px;
+  margin: 4rem auto;
 }
 
 .list-group-checkable {
@@ -96,16 +101,51 @@ body {
   opacity: .5;
 }
 
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  color: #fff;
+  background-color: transparent;
+  border-bottom: solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: #fff;
+}
+
+.nav-masthead .nav-link+.nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #A683E3;
+  border-bottom-color: #A683E3;
+}
+
+.typingarea {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+@media (max-width: 1200px) {
+  .add {
+    margin-left: 1rem;
+  }
+
+  .intro {
+    width: 75%;
+    margin: auto;
+  }
+
+  .typingarea {
+    width: 75%;
+  }
+}
+
 @media (min-width: 992px) {
   .rounded-lg-3 {
     border-radius: .3rem;
   }
-}
-
-.downNav li a:hover {
-  color: #fff !important;
-}
-
-.copy a:hover {
-  color: #fff !important;
 }

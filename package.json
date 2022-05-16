@@ -1,12 +1,12 @@
 {
-  "name": "todolist-v1",
+  "name": "todolist-v2",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "",
+  "author": "Emmanuel Omondi",
   "license": "ISC",
   "engines": {
     "node": "16.14.2"
